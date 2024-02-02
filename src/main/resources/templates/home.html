@@ -1,0 +1,25 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<html>
+<head><title>Home Page</title></head>
+<body>
+<h1>Hello I am bored !!</h1>
+<h2><p>Welcome to "<span th:text="${appName}">Our App</span>" app.</p></h2>
+<p> If you are bored, please click below!</p> 
+<button type="button" onclick="getBored()">Click Me!</button> 
+<p id="bored"></p>
+</body>
+</html>
+
+<script>
+    function getBored() {
+
+        $.ajax({
+        type: 'get',
+        url: 'http://localhost:8080/getActivity',
+        data: $('#bored').serialize(),
+        success: function(response) {
+      $('#bored').html(response);
+   }
+});
+    }    
+</script>
