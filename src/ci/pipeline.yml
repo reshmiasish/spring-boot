@@ -1,0 +1,38 @@
+resources:
+-  name: source-repo
+   type: git
+   icon: github
+   source: 
+     uri: https://github.com/reshmiasish/spring-boot.git
+     branch: master
+
+- name: reshmi-simple-spring-app
+  type: registry-image
+  icon: docker
+  source:
+    repository: reshmiasish/reshmi-simple-spring-app
+    username: reshmiasish
+    password: do0kcer2024Feb
+jobs:
+- name: build-and-push
+  plan:
+  - get: source-repo
+  - task: build-image
+    privileged: true
+    config:
+      platform: linux
+      image-resource:
+        type: registry-image
+        source: concourse/oci-build-task
+      inputs:
+      - name: source-repo
+      outputs:
+      - name: image
+      params: 
+        CONTEXT: source-repo/
+      run:
+        path: build
+  - put: reshmi-simple-spring-app
+    params: 
+      image: image/image.tar
+   
