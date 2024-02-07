@@ -1,6 +1,3 @@
-git_config:
-- name: safe.directory
-  value: /tmp/build/get
 resources:
 -  name: source-repo
    type: git
@@ -8,6 +5,8 @@ resources:
    source: 
      uri: https://github.com/reshmiasish/spring-boot.git
      branch: master
+     username: reshmiasish
+     password: learnG1t2Earn
 
 - name: reshmi-simple-spring-app
   type: registry-image
