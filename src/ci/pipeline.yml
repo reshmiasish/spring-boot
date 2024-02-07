@@ -7,10 +7,7 @@ resources:
      branch: master
      git_config:
      - name: safe.directory
-       value: '*'
-     #username: reshmiasish
-     #password: 
-
+       value: /tmp/build/get
 - name: reshmi-simple-spring-app
   type: registry-image
   icon: docker
