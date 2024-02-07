@@ -5,8 +5,8 @@ resources:
    source: 
      uri: https://github.com/reshmiasish/spring-boot.git
      branch: master
-     username: reshmiasish
-     password: learnG1t2Earn
+     #username: reshmiasish
+     #password: 
 
 - name: reshmi-simple-spring-app
   type: registry-image
