@@ -1,6 +1,6 @@
 git_config:
 - name: safe.directory
-  value: '*'
+  value: /tmp/build/get
 resources:
 -  name: source-repo
    type: git
