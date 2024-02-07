@@ -5,6 +5,9 @@ resources:
    source: 
      uri: https://github.com/reshmiasish/spring-boot.git
      branch: master
+     git_config:
+     - name: safe.directory
+       value: '*'
      #username: reshmiasish
      #password: 
 
