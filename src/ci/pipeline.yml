@@ -6,8 +6,8 @@ resources:
      uri: https://github.com/reshmiasish/spring-boot.git
      branch: master
      git_config:
-     - name: safe.directory
-       value: '/tmp/build/get'
+     -  name: safe.directory
+        value: '/tmp/build/get'
 - name: reshmi-simple-spring-app
   type: registry-image
   icon: docker
