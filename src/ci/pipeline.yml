@@ -26,7 +26,7 @@ jobs:
       platform: linux
       image-resource:
         type: registry-image
-        source: concourse/oci-build-task
+        source: concourse/oci_build_task
       inputs:
       - name: source-repo
       outputs:

@@ -10,7 +10,8 @@ services:
       PGDATA: /database
 
   concourse:
-    image: concourse/concourse
+    image: rdclda/concourse:7.9.1
+    platform: linux/arm64
     command: quickstart
     privileged: true
     depends_on: [concourse-db]
@@ -32,6 +33,5 @@ services:
       CONCOURSE_CLUSTER_NAME: arm64
       CONCOURSE_WORKER_CONTAINERD_DNS_SERVER: "8.8.8.8"
       # For ARM-based machine, change the Concourse runtime to "houdini"
-      CONCOURSE_WORKER_RUNTIME: "houdini"
-      CONCOURSE_RUNTIME: "houdini"
+      CONCOURSE_WORKER_RUNTIME: "containerd"
       
