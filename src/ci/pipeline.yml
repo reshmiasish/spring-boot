@@ -24,9 +24,9 @@ jobs:
     privileged: true
     config:
       platform: linux
-      image-resource:
+      image_resource:
         type: registry-image
-        source: concourse/oci_build_task
+        source: concourse/oci-build-task
       inputs:
       - name: source-repo
       outputs:
