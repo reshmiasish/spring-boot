@@ -25,7 +25,7 @@ jobs:
       outputs:
       - name: built-image
       run:
-        path: sh
+        path: entrypoint.sh
         args:
         - -exc
         - |
