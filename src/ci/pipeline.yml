@@ -8,6 +8,12 @@ resources:
      git_config:
      - name: safe.directory
        value: /tmp/build/get
+- name: docker-image
+  type: registry-image
+  source:
+    repository: reshmiasish/reshmi-simple-spring-app
+    username: reshmiasish
+    password: do0kcer2024Feb
 jobs:
 - name: build-and-push
   plan:
@@ -19,18 +25,16 @@ jobs:
       platform: linux
       image_resource:
         type: registry-image
-        source: {repository: docker, tag: latest}
+        source: {repository: concourse/oci-build-task}
       inputs:
       - name: source-repo
       outputs:
       - name: built-image
+      params:
+        CONTEXT: source-repo/
       run:
-        path: sh
-        args:
-        - -exc
-        - |
-          cd source-repo
-          docker build -t reshmi-simple-spring-app .
-          docker tag reshmi-simple-spring-app reshmiasish/my-image:latest
-          docker push reshmiasish/reshmi-simple-spring-app:latest
+        path: build
+  - put: docker-image
+    params:
+      build: built-image
    
