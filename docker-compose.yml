@@ -34,4 +34,5 @@ services:
       CONCOURSE_WORKER_CONTAINERD_DNS_SERVER: "8.8.8.8"
       # For ARM-based machine, change the Concourse runtime to "houdini"
       CONCOURSE_WORKER_RUNTIME: "containerd"
+      CONCOURSE_RUNTIME: "containerd"
       
