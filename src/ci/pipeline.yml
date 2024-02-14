@@ -9,7 +9,7 @@ resources:
      - name: safe.directory
        value: /tmp/build/get
 - name: reshmi-simple-spring-app
-  type: registry-image
+  type: registry_image
   icon: docker
   source:
     repository: reshmiasish/reshmi-simple-spring-app
@@ -25,7 +25,7 @@ jobs:
     config:
       platform: linux
       image_resource:
-        type: registry-image
+        type: registry_image
         source: concourse/oci-build-task
       inputs:
       - name: source-repo
