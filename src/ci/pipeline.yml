@@ -18,7 +18,7 @@ jobs:
     config:
       platform: linux
       image_resource:
-        type: docker-image
+        type: registry-image
         source: {repository: docker, tag: latest}
       inputs:
       - name: source-repo
