@@ -13,7 +13,7 @@ resources:
   source:
     repository: reshmiasish/reshmi-simple-spring-app
     username: reshmiasish
-    password: do0kcer2024Feb
+    password: ((registry-password))
     tag: latest
 jobs:
 - name: build-and-push
