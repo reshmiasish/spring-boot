@@ -3,7 +3,6 @@ WORKDIR /app
 COPY .mvn/ .mvn
 #RUN mvn -B -f ./pom.xml -s settings.xml dependency:resolve
 COPY mvnw pom.xml ./
-RUN chmod +x mvnw
 RUN ./mvnw dependency:resolve
 COPY src ./src
 CMD ["./mvnw", "spring-boot:run"]
